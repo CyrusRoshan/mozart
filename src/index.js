@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { createStore } from 'redux'
 import Keyboard from './components/Keyboard'
 import keyboard from './reducers'
+import './style.css'
 
 const store = createStore(keyboard)
 const rootEl = document.getElementById('root')

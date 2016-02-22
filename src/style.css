@@ -1,0 +1,41 @@
+.whiteKey {
+  width: 50px;
+  height: 200px;
+  background-color: white;
+}
+
+.blackKey {
+  width: 40;
+  height: 150px;
+  position: absolute;
+  background-color: black;
+}
+
+.key {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  float: left;
+  border-radius: 3px;
+  border: 1px solid black;
+}
+
+.keyLetter {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-family: 'raleway';
+  font-weight: 600;
+}
+
+.keyboard{
+  position: relative;
+  display: inline-block;
+  margin: 50px;
+}
