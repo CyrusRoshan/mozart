@@ -1,6 +1,6 @@
 const keys = ['A', '', 'B', 'C', '', 'D', '', 'E', 'F', '', 'G', ''];
 
-const initialKeyboard = Array(12).fill(' ').map((val, pos) => {
+const initialKeyboard = Array(12).fill(0).map((val, pos) => {
   return {
     keyName: keys[(pos + 3) % 12],
     octave: parseInt(pos / 12),

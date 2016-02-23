@@ -1,41 +1,25 @@
 import React, { Component, PropTypes } from 'react'
 
-class Keyboard extends Component {
-  constructor(props) {
-    super(props)
-  }
 
-  render() {
-    const { keys, onAddLeft, onRemoveLeft, onAddRight, onRemoveRight } = this.props
-    return (
-      <div>
-        <div className='leftButtons'>
-          <button onClick={onAddLeft}>
-            +
-          </button>
-          {' '}
-          <button onClick={onRemoveLeft}>
-            -
-          </button>
-        </div>
+const Keyboard = ({
+  keys, onAddLeft, onRemoveLeft, onAddRight, onRemoveRight
+}) => (
+  <div className='keyboardArea'>
+    <div className='arrowHolder'>
+      <div className='arrow leftArrow' onClick={onAddLeft}></div>
+      <div className='arrow rightArrow' onClick={onRemoveLeft}></div>
+    </div>
 
-        <div className='keyboard'>
-          {keys.map((data, i) => keyGen(data, keys.slice(0, i).reduce((prev, curr) => {return prev + (curr.keyName ? 1 : 0)}, 0)))}
-        </div>
+    <div className='keyboard'>
+      {keys.map((data, i) => keyGen(data, keys.slice(0, i).reduce((prev, curr) => {return prev + (curr.keyName ? 1 : 0)}, 0)))}
+    </div>
 
-        <div className='rightButtons'>
-          <button onClick={onAddRight}>
-            +
-          </button>
-          {' '}
-          <button onClick={onRemoveRight}>
-            -
-          </button>
-        </div>
-      </div>
-    )
-  }
-}
+    <div className='arrowHolder'>
+      <div className='arrow leftArrow' onClick={onRemoveRight}></div>
+      <div className='arrow rightArrow' onClick={onAddRight}></div>
+    </div>
+  </div>
+)
 
 function keyGen(key, space) {
   return (
