@@ -1,6 +1,12 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: lato;
+}
+
 .whiteKey {
   width: 50px;
-  height: 200px;
+  height: 225px;
   background-color: white;
 }
 
@@ -28,6 +34,7 @@
     -webkit-align-items: flex-end;
     -ms-flex-align: end;
   align-items: flex-end;
+  flex-direction: column-reverse;
   float: left;
   border-radius: 3px;
   border: 1px solid #313131;
@@ -37,12 +44,28 @@
   border-color: black;
 }
 
+.keyKey {
+  text-align: center;
+  font-size: 12px;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 7px;
+}
+
+.blackKey > .keyKey {
+  color: white;
+}
+
+.blackKey > .keyLetter {
+  display: none;
+}
+
 .keyLetter {
   width: 100%;
   text-align: center;
   margin-bottom: 5px;
   font-size: 20px;
-  font-family: 'raleway';
   font-weight: 600;
 }
 

@@ -9,17 +9,18 @@ const Keyboard = ({ keys, onAddLeft, onRemoveLeft, onAddRight, onRemoveRight, on
     let keyStyle = {
       left: space * 52 - 42/2 + 'px'
     };
-    
+
     return (
       <div className={keyName} style={keyStyle} onClick={onPlayKey.bind(null, key)}>
         <div className='keyLetter'>
-          {key.keyName}
+          {key.keyName + key.octave}
+        </div>
+        <div className='keyKey'>
+          {key.key}
         </div>
       </div>
     )
   }
-
-
 
   return (
   <div className='keyboardArea'>
