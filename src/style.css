@@ -12,11 +12,11 @@
   width: 40;
   height: 150px;
   position: absolute;
-  background-color: #313131;
+  background-color: black;
 }
 
 .blackKey:hover {
-  background-color: black;
+  background-color: #313131;
 }
 
 .key {

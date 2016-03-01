@@ -1,9 +1,27 @@
+// @flow
 import React, { Component, PropTypes } from 'react'
 
 
-const Keyboard = ({
-  keys, onAddLeft, onRemoveLeft, onAddRight, onRemoveRight
-}) => (
+const Keyboard = ({ keys, onAddLeft, onRemoveLeft, onAddRight, onRemoveRight, onPlayKey }) => {
+
+  function keyGen(key, space) {
+    let keyName = 'key ' + (key.keyName ? 'whiteKey' : 'blackKey');
+    let keyStyle = {
+      left: space * 52 - 42/2 + 'px'
+    };
+    
+    return (
+      <div className={keyName} style={keyStyle} onClick={onPlayKey.bind(null, key)}>
+        <div className='keyLetter'>
+          {key.keyName}
+        </div>
+      </div>
+    )
+  }
+
+
+
+  return (
   <div className='keyboardArea'>
     <div className='arrowHolder'>
       <div className='arrow leftArrow' onClick={onAddLeft}></div>
@@ -19,24 +37,15 @@ const Keyboard = ({
       <div className='arrow rightArrow' onClick={onAddRight}></div>
     </div>
   </div>
-)
-
-function keyGen(key, space) {
-  return (
-    <div className={'key ' + (key.keyName ? 'whiteKey' : 'blackKey')} style={{left: space * 52 - 42/2 + 'px'}}>
-      <div className='keyLetter'>
-        {key.keyName}
-      </div>
-    </div>
-  )
-}
+)}
 
 Keyboard.propTypes = {
   keys: PropTypes.array.isRequired,
   onAddLeft: PropTypes.func.isRequired,
   onRemoveLeft: PropTypes.func.isRequired,
   onAddRight: PropTypes.func.isRequired,
-  onRemoveRight: PropTypes.func.isRequired
+  onRemoveRight: PropTypes.func.isRequired,
+  onPlayKey: PropTypes.func.isRequired,
 }
 
 export default Keyboard

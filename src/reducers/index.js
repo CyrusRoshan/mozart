@@ -1,15 +1,15 @@
+// @flow
 const keys = ['A', '', 'B', 'C', '', 'D', '', 'E', 'F', '', 'G', ''];
 
 const initialKeyboard = Array(12).fill(0).map((val, pos) => {
   return {
     keyName: keys[(pos + 3) % 12],
-    octave: parseInt(pos / 12),
+    octave: Math.floor(pos / 12),
     number: (pos + 3) % 12
   }
 });
 
 export default function counter(state = initialKeyboard, action) {
-  console.log(state)
   switch (action.type) {
     case 'ADD_LEFT':
       var number = state[0].number;
@@ -25,6 +25,9 @@ export default function counter(state = initialKeyboard, action) {
       return state.concat({keyName: keys[number], octave, number})
     case 'REMOVE_RIGHT':
       return state.length - 1 ? state.slice(0, -1) : state
+    case 'PLAY_KEY':
+      console.log(action.key);
+      return state;
     default:
       return state
   }

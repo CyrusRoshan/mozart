@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react'
 import Keyboard from '../components/Keyboard'
 //import MainSection from '../components/MainSection'

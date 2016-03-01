@@ -1,3 +1,4 @@
+// @flow
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { createStore } from 'redux'
@@ -16,6 +17,7 @@ function render() {
       onRemoveLeft={() => store.dispatch({ type: 'REMOVE_LEFT' })}
       onAddRight={() => store.dispatch({ type: 'ADD_RIGHT' })}
       onRemoveRight={() => store.dispatch({ type: 'REMOVE_RIGHT' })}
+      onPlayKey={(key) => store.dispatch({ type: 'PLAY_KEY', key})}
     />,
     rootEl
   )
