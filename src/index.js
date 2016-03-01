@@ -12,12 +12,13 @@ const rootEl = document.getElementById('root')
 function render() {
   ReactDOM.render(
     <Keyboard
+      onKeyPress={() => console.log('asdf')}
       keys={store.getState()}
       onAddLeft={() => store.dispatch({ type: 'ADD_LEFT' })}
       onRemoveLeft={() => store.dispatch({ type: 'REMOVE_LEFT' })}
       onAddRight={() => store.dispatch({ type: 'ADD_RIGHT' })}
       onRemoveRight={() => store.dispatch({ type: 'REMOVE_RIGHT' })}
-      onPlayKey={(key) => store.dispatch({ type: 'PLAY_KEY', key})}
+      onPlayKey={(key) => store.dispatch({ type: 'PLAY_KEY', key })}
     />,
     rootEl
   )

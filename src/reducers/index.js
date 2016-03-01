@@ -1,6 +1,6 @@
 // @flow
+const piano = Synth.createInstrument('piano');
 const keys = ['A', '', 'B', 'C', '', 'D', '', 'E', 'F', '', 'G', ''];
-
 const keyRow1 = '1234567890-='.split('');
 const keyRow2 = 'qwertyuiop[]'.split('');
 
@@ -56,7 +56,26 @@ export default function counter(state = initialKeyboard, action) {
     case 'REMOVE_RIGHT':
       return remapKeys(state.length - 1 ? state.slice(0, -1) : state);
     case 'PLAY_KEY':
-      console.log(action.key);
+      var keyName;
+      var octave;
+      if (action.key.octave) {
+        keyName = action.key.keyName;
+        octave = action.key.octave;
+      } else {
+        var keyboardLetter = String.fromCharCode(action.key.keyCode).toLowerCase();
+        for (var i = 0; i < state.length; i++) {
+            if (state[i].key === keyboardLetter) {
+              keyName = state[i].keyName;
+              octave = state[i].octave;
+              break;
+            }
+        }
+        if (!keyName || !octave) {
+          return state;
+        }
+      }
+      console.log(keyName + octave);
+      piano.play(keyName, octave, 1);
       return state;
     default:
       return state
