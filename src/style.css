@@ -58,7 +58,8 @@ html, body {
 }
 
 .blackKey > .keyLetter {
-  display: none;
+  font-size: 8px;
+  color: white;
 }
 
 .keyLetter {

@@ -14,7 +14,7 @@ const Keyboard = React.createClass({
   },
 
   keyGen: function(key, space) {
-    let keyName = 'key ' + (key.keyName ? 'whiteKey' : 'blackKey');
+    let keyName = 'key ' + (key.white ? 'whiteKey' : 'blackKey');
     let keyStyle = {
       left: space * 52 - 42/2 + 'px'
     };
@@ -48,7 +48,7 @@ const Keyboard = React.createClass({
         </div>
 
         <div className='keyboard'>
-          {this.props.keys.map((data, i) => this.keyGen(data, this.props.keys.slice(0, i).reduce((prev, curr) => {return prev + (curr.keyName ? 1 : 0)}, 0)))}
+          {this.props.keys.map((data, i) => this.keyGen(data, this.props.keys.slice(0, i).reduce((prev, curr) => {return prev + curr.white}, 0)))}
         </div>
 
         <div className='arrowHolder'>
