@@ -12,8 +12,11 @@ Key sounds made using [audiosynth](https://github.com/keithwhor/audiosynth).
 Example keyboard layouts:
 
 <img src='./screenshots/1.png' height = 100>
+<br>
 <img src='./screenshots/2.png' height = 100>
+<br>
 <img src='./screenshots/3.png' height = 100>
+<br>
 <img src='./screenshots/4.png' height = 100>
 
 ## License:
