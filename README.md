@@ -11,10 +11,10 @@ Key sounds made using [audiosynth](https://github.com/keithwhor/audiosynth).
 
 Example keyboard layouts:
 
-<img src='./Screenshots/1.png' height = 100>
-<img src='./Screenshots/2.png' height = 100>
-<img src='./Screenshots/3.png' height = 100>
-<img src='./Screenshots/4.png' height = 100>
+<img src='./screenshots/1.png' height = 100>
+<img src='./screenshots/2.png' height = 100>
+<img src='./screenshots/3.png' height = 100>
+<img src='./screenshots/4.png' height = 100>
 
 ## License:
 MIT
